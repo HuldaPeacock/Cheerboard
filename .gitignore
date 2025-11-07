@@ -1,0 +1,20 @@
+# Dependencies
+**/node_modules/
+
+# Environment
+.env
+.env.*
+
+# Logs
+*.log
+logs/
+hardhat-node.log
+next-dev.log
+
+# Build / cache
+.next/
+cache/
+dist/
+coverage/
+
+
