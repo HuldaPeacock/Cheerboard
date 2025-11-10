@@ -1,0 +1,28 @@
+{
+  "name": "cheersboard-contracts",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "hardhat compile",
+    "clean": "hardhat clean",
+    "deploy:localhost": "hardhat run --network localhost scripts/deploy.ts",
+    "deploy:hardhat": "hardhat run --network hardhat scripts/deploy.ts",
+    "deploy:sepolia": "hardhat run --network sepolia scripts/deploy.ts"
+  },
+  "devDependencies": {
+    "@fhevm/hardhat-plugin": "^0.1.0",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.26.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@fhevm/solidity": "^0.8.0",
+    "ethers": "^6.15.0",
+    "encrypted-types": "^0.0.4"
+  }
+}
+
