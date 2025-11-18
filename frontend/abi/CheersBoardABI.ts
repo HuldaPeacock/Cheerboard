@@ -1,0 +1,633 @@
+
+/* Auto-generated. Run: npm run genabi */
+export const CheersBoardABI = {
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "wallId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "postId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "author",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "title",
+          "type": "string"
+        }
+      ],
+      "name": "PostCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "wallId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "postId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        }
+      ],
+      "name": "PostLiked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "wallId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "postId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "moderator",
+          "type": "address"
+        }
+      ],
+      "name": "PostRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "wallId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "organizer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "coverCID",
+          "type": "string"
+        }
+      ],
+      "name": "WallCreated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "coverCID",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "startTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "endTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "allowAnonymous",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "allowMedia",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "postFee",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "autoMint",
+          "type": "bool"
+        }
+      ],
+      "name": "createWall",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "wallId",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "wallId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "postId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getEncryptedLikeCount",
+      "outputs": [
+        {
+          "internalType": "euint32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "postId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPost",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "postId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "wallId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "author",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "title",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "content",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "mediaCID",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "timestamp",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "removed",
+              "type": "bool"
+            },
+            {
+              "internalType": "euint32",
+              "name": "encryptedLikeCount",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct CheersBoard.Post",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "wallId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPostsByWall",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "wallId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getWall",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "wallId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "organizer",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "title",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "description",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "coverCID",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "startTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "endTime",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "allowAnonymous",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "allowMedia",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint256",
+              "name": "postFee",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "autoMint",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct CheersBoard.Wall",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "wallId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "postId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "externalEuint32",
+          "name": "encryptedIncrement",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "inputProof",
+          "type": "bytes"
+        }
+      ],
+      "name": "likePost",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "nextPostId",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "nextWallId",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "wallId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "mediaCID",
+          "type": "string"
+        }
+      ],
+      "name": "postBlessing",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "postId",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "posts",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "postId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "wallId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "author",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "mediaCID",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "removed",
+          "type": "bool"
+        },
+        {
+          "internalType": "euint32",
+          "name": "encryptedLikeCount",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "protocolId",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "wallId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "postId",
+          "type": "uint256"
+        }
+      ],
+      "name": "removePost",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "wallToPosts",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "walls",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "wallId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "organizer",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "coverCID",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "startTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "endTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "allowAnonymous",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "allowMedia",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "postFee",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "autoMint",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
+} as const;
